@@ -1,4 +1,4 @@
-gflags_catkin
+gflags_vendor
 =============
 
-A catkin wrapper for Google gflags
+A ros2 wrapper for Google gflags
