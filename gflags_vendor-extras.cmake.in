@@ -1,0 +1,15 @@
+find_package(gflags QUIET)
+
+if(NOT gflags_FOUND)
+  # add the local Modules directory to the modules path
+  if(WIN32)
+    set(gflags_DIR "${@PROJECT_NAME@_DIR}/../../../lib/cmake/gflags")
+  endif()
+  message(STATUS "Setting gflags_DIR to: '${gflags_DIR}'")
+  find_package(gflags CONFIG QUIET)
+endif()
+
+set(gflags_vendor_LIBRARIES ${GFLAGS_LIBRARIES})
+set(gflags_vendor_INCLUDE_DIRS ${GFLAGS_INCLUDE_DIR})
+
+list(APPEND gflags_vendor_TARGETS gflags)
